@@ -2,7 +2,7 @@ import { Service } from "typedi";
 import { InjectRepository } from "typeorm-typedi-extensions";
 import { AuthenticatedUser, RegisterInput } from "../../dto/user.dto";
 import { InvitationStatus } from "../../entities/user/invitation-status.enum";
-import { UserRepository } from "../../persistence/user.repository";
+import { UserRepository } from "../../repositories/user.repository";
 
 @Service()
 export class UserService {
