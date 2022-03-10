@@ -1,3 +1,3 @@
-export function SampleWebhook(req, res) {
+export function sampleWebhook(req, res) {
   res.send();
 }
