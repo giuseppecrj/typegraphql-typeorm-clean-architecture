@@ -1,5 +1,5 @@
 import { buildSchema } from "type-graphql";
-import { UserResolver } from "./user/UserResolver";
+import { UserResolver } from "./user/user.resolver";
 import { Container } from "typeorm-typedi-extensions";
 
 export default async function createSchema() {
