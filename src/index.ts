@@ -6,6 +6,7 @@ import { createConnection, useContainer } from "typeorm";
 import ormconfig from "./ormconfig";
 import apolloConfig from "./infrastructure";
 import { Container } from "typeorm-typedi-extensions";
+import { SampleWebhook } from "./controllers/sample/sample.webhook";
 
 async function bootstrap() {
   useContainer(Container);
@@ -13,6 +14,7 @@ async function bootstrap() {
   await createConnection(ormconfig);
 
   const app = express();
+  app.use("/webhooks/sample", SampleWebhook);
 
   const apollo = new ApolloServer(await apolloConfig());
   await apollo.start();

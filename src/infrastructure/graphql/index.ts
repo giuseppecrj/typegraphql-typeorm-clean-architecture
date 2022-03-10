@@ -1,7 +1,7 @@
 import { buildSchema, registerEnumType } from "type-graphql";
 import { Container } from "typeorm-typedi-extensions";
 import path from "path";
-import { UserResolver } from "../../resolvers/user/user.resolver";
+import { UserResolver } from "../../controllers/user/user.resolver";
 import { InvitationStatus } from "../../entities/user/invitation-status.enum";
 
 export default async function createSchema() {
