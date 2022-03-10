@@ -1,0 +1,7 @@
+{
+  "ignore": [],
+  "watch": ["src/**/*.ts"],
+  "execMap": {
+    "ts": "node --nolazy -r ts-node/register"
+  }
+}
