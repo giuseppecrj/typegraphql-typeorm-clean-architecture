@@ -1,10 +1,10 @@
 import { ObjectType, Field, ID } from "type-graphql";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-import { User as DomainUser } from "../../../domain/user/user.domain";
+import { InvitationStatus } from "./invitation-status.enum";
 
 @ObjectType()
 @Entity()
-export class User implements DomainUser {
+export class User {
   @Field(() => ID)
   @PrimaryGeneratedColumn()
   readonly id: string;
@@ -20,4 +20,12 @@ export class User implements DomainUser {
   @Field()
   @Column()
   password: string;
+
+  @Field(() => InvitationStatus, {
+    nullable: true,
+    defaultValue: InvitationStatus.NONE,
+    description: "Invitation status of profile",
+  })
+  @Column({ nullable: true })
+  invitationStatus: InvitationStatus;
 }

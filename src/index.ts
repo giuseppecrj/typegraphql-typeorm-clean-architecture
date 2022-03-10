@@ -4,7 +4,7 @@ import express from "express";
 import http from "http";
 import { createConnection, useContainer } from "typeorm";
 import ormconfig from "./ormconfig";
-import apolloConfig from "./application";
+import apolloConfig from "./infrastructure";
 import { Container } from "typeorm-typedi-extensions";
 
 async function bootstrap() {

@@ -1,11 +1,25 @@
-import { User } from "../domain/user/user.domain";
+import { InputType, Field, ObjectType, ID } from "type-graphql";
+import { User } from "../entities/user/user.entity";
 
-export interface RegisterInput {
+@InputType()
+export class RegisterInput {
+  @Field()
   name: string;
+
+  @Field()
   email: string;
+
+  @Field()
   password: string;
 }
 
 export type PublicUser = Omit<User, "password">;
 
-export interface AuthenticatedUser extends PublicUser {}
+@ObjectType()
+export class AuthenticatedUser {
+  @Field(() => User)
+  user: PublicUser;
+
+  @Field()
+  token: string;
+}

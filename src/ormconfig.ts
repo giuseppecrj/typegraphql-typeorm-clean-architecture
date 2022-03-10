@@ -9,5 +9,5 @@ export default {
   password: "postgres",
   database: "typeorm-graphql-typescript",
   synchronize: true,
-  entities: [path.join(__dirname, "application", "graphql", "**", "*.*")],
+  entities: [path.join(__dirname, "entities", "**", "*.*")],
 } as ConnectionOptions;
